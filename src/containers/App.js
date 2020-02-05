@@ -2,7 +2,7 @@ import React from 'react';
 import './App.module.scss';
 import Search from '../component/Search/Search';
 
-const app = () => {
+const App = () => {
   return (
     <div>
       <Search></Search>
@@ -10,4 +10,4 @@ const app = () => {
   );
 }
 
-export default app;
+export default App;

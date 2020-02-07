@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PlatformSelector from '../PlatformSelector/PlatformSelector';
 import './Search.module.scss';
 
-const Search = () => {
+const Search = props => {
   const [state, setState] = useState({
     platform: 'github',
     username: ''
@@ -26,6 +26,7 @@ const Search = () => {
         type="text"
         placeholder="Enter A Username"
         onChange={event => stateChangedHandler(event.target.value, 'username')} />
+      <button onClick={props.usernameLookup}>Add Data</button>
     </div>
   );
 }

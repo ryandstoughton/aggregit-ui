@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.module.scss';
-import Search from '../component/Search/Search';
+import Search from '../components/Search/Search';
 
 const App = () => {
   const [state, setState] = useState({

@@ -1,12 +1,29 @@
 import React from 'react';
-import './PlatformSelector.module.scss';
+import Select from 'react-select';
 
 const PlatformSelector = props => {
+  const platforms = [
+    {value: 'github', label: 'Github'},
+    {value: 'gitlab', label: 'Gitlab'}
+  ];
+
+  const customStyles = {
+    control: (base) => ({
+      ...base,
+      width: '110px',
+      height: '40px',
+      'min-height': '40px',
+      'border-radius': '0',
+      'border-right': '0'
+    }),
+};
+
   return (
-    <select onChange={props.change}>
-      <option value='github'>Github</option>
-      <option value='gitlab'>Gitlab</option>
-    </select>
+    <Select
+      styles={customStyles}
+      defaultValue={platforms.find(platform => platform.value === 'github')}
+      options={platforms}
+      onChange={props.changed}/>
   );
 };
 

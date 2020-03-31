@@ -17,11 +17,23 @@ const Search = (props) => {
     setState(updatedState);
   };
 
+  const usernameLookup = async () => {
+    const contributionsResponse = await fetch(
+      `http://localhost:8080/git/contributions?username=${state.username}&platform=${state.platform}`
+    );
+    const contributions = await contributionsResponse.json();
+
+    props.addUserData({
+      username: state.username,
+      platform: state.platform,
+      contributions,
+    });
+  };
+
   return (
     <div className={styles.search}>
       <div className={styles.search__info}>
         <PlatformSelector
-          current={state.platform}
           change={(event) =>
             stateChangedHandler(event.target.value, "platform")
           }
@@ -34,7 +46,7 @@ const Search = (props) => {
           }
         />
       </div>
-      <button onClick={props.usernameLookup}>Add Data</button>
+      <button onClick={usernameLookup}>Add Data</button>
     </div>
   );
 };

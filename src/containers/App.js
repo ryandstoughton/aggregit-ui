@@ -7,26 +7,10 @@ const App = () => {
     users: [],
   });
 
-  const usernameLookup = () => {
+  const addUserData = (addedUser) => {
     // Perform some HTTP request to get user information
-    const newUser = {
-      contributions: [
-        {
-          day: 0,
-          count: 3,
-        },
-        {
-          day: 1,
-          count: 2,
-        },
-        {
-          day: 3,
-          count: 1,
-        },
-      ],
-    };
     const updatedState = {
-      users: [...state.users, newUser],
+      users: [...state.users, addedUser],
     };
 
     console.log(updatedState);
@@ -35,7 +19,7 @@ const App = () => {
 
   return (
     <div>
-      <Search usernameLookup={usernameLookup}></Search>
+      <Search addUserData={addUserData}></Search>
     </div>
   );
 };

@@ -12,9 +12,9 @@ const PlatformSelector = (props) => {
       ...base,
       width: "110px",
       height: "40px",
-      "min-height": "40px",
-      "border-radius": "0",
-      "border-right": "0",
+      minHeight: "40px",
+      borderRadius: "0",
+      borderRight: "0",
     }),
   };
 

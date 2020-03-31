@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import './App.module.scss';
-import Search from '../components/Search/Search';
+import React, { useState } from "react";
+import "./App.module.scss";
+import Search from "../components/Search/Search";
 
 const App = () => {
   const [state, setState] = useState({
-    users: []
+    users: [],
   });
 
   const usernameLookup = () => {
@@ -13,31 +13,31 @@ const App = () => {
       contributions: [
         {
           day: 0,
-          count: 3
+          count: 3,
         },
         {
           day: 1,
-          count: 2
+          count: 2,
         },
         {
           day: 3,
-          count: 1
-        }
-      ]
+          count: 1,
+        },
+      ],
     };
     const updatedState = {
-      users: [...state.users, newUser]
+      users: [...state.users, newUser],
     };
 
     console.log(updatedState);
     setState(updatedState);
-  }
+  };
 
   return (
     <div>
       <Search usernameLookup={usernameLookup}></Search>
     </div>
   );
-}
+};
 
 export default App;
